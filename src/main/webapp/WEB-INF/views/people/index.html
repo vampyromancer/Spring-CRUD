@@ -5,8 +5,8 @@
     <title>People</title>
 </head>
 <body>
-<p th:each="person, state : ${people}">
-<a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user </a>
+<p th:each="x, state : ${people}">
+<a th:href="@{/people/{id}(id=${x.getId()})}" th:text="${x.getName()}">user </a>
 </p>
 </body>
 </html>
