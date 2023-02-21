@@ -31,7 +31,7 @@ public class PeopleController {
     }
     @GetMapping("/new")
     public String newPerson(Model model){
-        model.addAttribute("person", new Person());
+        model.addAttribute("newPerson", new Person());
         return "people/new";
     }
     @PostMapping()

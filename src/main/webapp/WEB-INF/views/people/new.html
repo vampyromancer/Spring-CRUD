@@ -5,7 +5,7 @@
     <title>New person</title>
 </head>
 <body>
-<form th:method="POST" th:action="@{/people}" th:object="${person}">
+<form th:method="POST" th:action="@{/people}" th:object="${newPerson}">
   <label for="putName">Enter name: </label>
   <input type="text" th:field="*{name}" id="putName"/>
   <br>
