@@ -5,9 +5,18 @@
     <title>Edit person</title>
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/people/{id}(id=${editPerson.getId()})}" th:object="${editPerson}">
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
     <label for="putName">Enter name: </label>
     <input type="text" th:field="*{name}" id="putName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br>
+    <label for="putAge">Enter age: </label>
+    <input type="text" th:field="*{age}" id="putAge"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</div>
+    <br>
+    <label for="putEmail">Enter mail: </label>
+    <input type="text" th:field="*{email}" id="putEmail"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</div>
     <br>
     <input type="submit" value="Update!"/>
 </form>

@@ -12,10 +12,10 @@ public class PersonDao {
     private List<Person> people;
     {
         people =  new ArrayList<>();
-        people.add(new Person(++PEOPLE_COUNT, "Tom"));
-        people.add(new Person(++PEOPLE_COUNT, "John"));
-        people.add(new Person(++PEOPLE_COUNT,"Kate"));
-        people.add(new Person(++PEOPLE_COUNT, "Ann"));
+        people.add(new Person(++PEOPLE_COUNT, "Tom",40, "ab334@mail.ru"));
+        people.add(new Person(++PEOPLE_COUNT, "John", 25, "ivanJohn@index.ru"));
+        people.add(new Person(++PEOPLE_COUNT,"Kate", 49, "katiepipeti@gmail.com"));
+        people.add(new Person(++PEOPLE_COUNT, "Ann", 19, "anniehrenie@yandex.ru"));
     }
     public List<Person> index(){
         return people;
@@ -30,6 +30,8 @@ public class PersonDao {
     public void update(int id, Person updatedPerson){
         Person p = people.stream().filter(person -> person.getId()==id).findAny().orElse(null);
         p.setName(updatedPerson.getName());
+        p.setAge(updatedPerson.getAge());
+        p.setEmail(updatedPerson.getEmail());
     }
     public void delete(int id){
         people.removeIf(p->p.getId()==id);
